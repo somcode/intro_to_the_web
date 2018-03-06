@@ -8,19 +8,17 @@ end
 
 get '/secret' do
   @name = 'whatever'
-  # 'This is a secret page.'
+   'This is a secret page.'
   erb(:index)
-
 end
 
-get '/secret/random-cat' do
+get '/random-cat' do
   @name =["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
 
-get '/secret/named-cat' do
-  p params
+get '/named-cat' do
+   p params
   @name = params[:name]
-  @colour = params[:colour]
   erb(:index)
 end
