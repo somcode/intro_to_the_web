@@ -7,9 +7,13 @@ get '/' do
 end
 
 get '/secret' do
-  'This is a secret page.'
+  @name = 'whatever'
+  # 'This is a secret page.'
+  erb(:index)
+
 end
 
 get '/secret/cat' do
+  @name =["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
